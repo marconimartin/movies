@@ -72,7 +72,7 @@ Se encuentran en la carpeta **data**.
 ## Permisos ### 
 (en caso de ser necesario)
 ```
-cd ~/<your-proyects-root-dir/movies>    // (fuera de contenedores)
+cd ~/<your-proyects-root-dir>/movies    // (fuera de contenedores)
 sudo chown -R $USER:$USER .
 sudo chmod -R +w .
 chmod -R 777 storage
