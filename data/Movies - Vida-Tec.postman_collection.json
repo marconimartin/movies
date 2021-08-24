@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "9bd6d86a-7908-415f-89ad-58a11189e69b",
+		"name": "Movies - Vida-Tec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "uf0eRycJNqz9bTvhRQpByLAAIaDz40bmWuuohwz9",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin@movies.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8105/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzNjYzE5Njk2YmVkYmZmZDkyN2RkYTI2MzJmZmM3MDQ2ZDlmNmU3OTkzMzc1MGM0YTdlMGYyNzg0NDc0M2UzM2U0MDhmZWI1YzNkOGM5M2MiLCJpYXQiOjE2Mjk3MjM1MTUuMDE4NTEwMSwibmJmIjoxNjI5NzIzNTE1LjAxODU0OSwiZXhwIjoxNjYxMjU5NTE0Ljk2MzAwOTEsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.WpFcw8Eg3qTNObS8lIXrfd0LP_dpBrVTAQxHe699tWtHmGsfMeBhHCVZV632SxqZDuIS9VEMv8kfGeir_qvR5HyQVS0TccnibSZwFwI8baGeLsgRGzwFP4-24w3JyzITXGzkqbZLGyJcOKCaRcPnrU_f3cXx-cglrq7tbZbuGUGHz6It2LsrrNYw2nJMviWe06549Q-btDs2wo78f3rfw7SxgzUpthCVLqM8IwJWK4WLfg8GNRjl3ti2Zfy-VLkI36QfWVy33muTbu6rsJ4BZmI81EoaXUKhNYAdeIZjn2ciyYvWjbaSOScwsfYjHv_KAsxYp_cYVbKtx1kJLxwy7SYHbOG_24fR4A-x_t_7o9Ro9qZpcKd5jUjaBcZD_4vdYuqCNGsbNGOJ16SY5YobdsePsU16Uu28SRTEQVeFZuP3nmvWSi7gXlkFzOiFPuRioN4j9DhMoDfJnhnZjR712_e7wjhks2OkSwwGQL2MPblvJqcaUvVdvFhrabXZijWtR5zh6U6cRSyyIe8FgXRzcZxoyrr5y2UhwMORhUIKRJhfsE3A2_1xDVM0SUqBnJ-EsNL5g1_LPUjeOfUM1RpenFrFKJ_y7pjeC13-KoDb1oHnLv1GcsgslY1mbtPCLIF3wLZ-QehCmnmMzofJcIfRcULS-jj1IxpKcKchLP4_Ow0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"search\": \"\",\n    \"page\" : \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8105/api/v1/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzNjYzE5Njk2YmVkYmZmZDkyN2RkYTI2MzJmZmM3MDQ2ZDlmNmU3OTkzMzc1MGM0YTdlMGYyNzg0NDc0M2UzM2U0MDhmZWI1YzNkOGM5M2MiLCJpYXQiOjE2Mjk3MjM1MTUuMDE4NTEwMSwibmJmIjoxNjI5NzIzNTE1LjAxODU0OSwiZXhwIjoxNjYxMjU5NTE0Ljk2MzAwOTEsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.WpFcw8Eg3qTNObS8lIXrfd0LP_dpBrVTAQxHe699tWtHmGsfMeBhHCVZV632SxqZDuIS9VEMv8kfGeir_qvR5HyQVS0TccnibSZwFwI8baGeLsgRGzwFP4-24w3JyzITXGzkqbZLGyJcOKCaRcPnrU_f3cXx-cglrq7tbZbuGUGHz6It2LsrrNYw2nJMviWe06549Q-btDs2wo78f3rfw7SxgzUpthCVLqM8IwJWK4WLfg8GNRjl3ti2Zfy-VLkI36QfWVy33muTbu6rsJ4BZmI81EoaXUKhNYAdeIZjn2ciyYvWjbaSOScwsfYjHv_KAsxYp_cYVbKtx1kJLxwy7SYHbOG_24fR4A-x_t_7o9Ro9qZpcKd5jUjaBcZD_4vdYuqCNGsbNGOJ16SY5YobdsePsU16Uu28SRTEQVeFZuP3nmvWSi7gXlkFzOiFPuRioN4j9DhMoDfJnhnZjR712_e7wjhks2OkSwwGQL2MPblvJqcaUvVdvFhrabXZijWtR5zh6U6cRSyyIe8FgXRzcZxoyrr5y2UhwMORhUIKRJhfsE3A2_1xDVM0SUqBnJ-EsNL5g1_LPUjeOfUM1RpenFrFKJ_y7pjeC13-KoDb1oHnLv1GcsgslY1mbtPCLIF3wLZ-QehCmnmMzofJcIfRcULS-jj1IxpKcKchLP4_Ow0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"t27\",\n    \"duration\" : \"23\",\n    \"director\" : \"d23\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8105/api/v1/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzNjYzE5Njk2YmVkYmZmZDkyN2RkYTI2MzJmZmM3MDQ2ZDlmNmU3OTkzMzc1MGM0YTdlMGYyNzg0NDc0M2UzM2U0MDhmZWI1YzNkOGM5M2MiLCJpYXQiOjE2Mjk3MjM1MTUuMDE4NTEwMSwibmJmIjoxNjI5NzIzNTE1LjAxODU0OSwiZXhwIjoxNjYxMjU5NTE0Ljk2MzAwOTEsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.WpFcw8Eg3qTNObS8lIXrfd0LP_dpBrVTAQxHe699tWtHmGsfMeBhHCVZV632SxqZDuIS9VEMv8kfGeir_qvR5HyQVS0TccnibSZwFwI8baGeLsgRGzwFP4-24w3JyzITXGzkqbZLGyJcOKCaRcPnrU_f3cXx-cglrq7tbZbuGUGHz6It2LsrrNYw2nJMviWe06549Q-btDs2wo78f3rfw7SxgzUpthCVLqM8IwJWK4WLfg8GNRjl3ti2Zfy-VLkI36QfWVy33muTbu6rsJ4BZmI81EoaXUKhNYAdeIZjn2ciyYvWjbaSOScwsfYjHv_KAsxYp_cYVbKtx1kJLxwy7SYHbOG_24fR4A-x_t_7o9Ro9qZpcKd5jUjaBcZD_4vdYuqCNGsbNGOJ16SY5YobdsePsU16Uu28SRTEQVeFZuP3nmvWSi7gXlkFzOiFPuRioN4j9DhMoDfJnhnZjR712_e7wjhks2OkSwwGQL2MPblvJqcaUvVdvFhrabXZijWtR5zh6U6cRSyyIe8FgXRzcZxoyrr5y2UhwMORhUIKRJhfsE3A2_1xDVM0SUqBnJ-EsNL5g1_LPUjeOfUM1RpenFrFKJ_y7pjeC13-KoDb1oHnLv1GcsgslY1mbtPCLIF3wLZ-QehCmnmMzofJcIfRcULS-jj1IxpKcKchLP4_Ow0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8105/api/v1/movies/1999",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"1999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzNjYzE5Njk2YmVkYmZmZDkyN2RkYTI2MzJmZmM3MDQ2ZDlmNmU3OTkzMzc1MGM0YTdlMGYyNzg0NDc0M2UzM2U0MDhmZWI1YzNkOGM5M2MiLCJpYXQiOjE2Mjk3MjM1MTUuMDE4NTEwMSwibmJmIjoxNjI5NzIzNTE1LjAxODU0OSwiZXhwIjoxNjYxMjU5NTE0Ljk2MzAwOTEsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.WpFcw8Eg3qTNObS8lIXrfd0LP_dpBrVTAQxHe699tWtHmGsfMeBhHCVZV632SxqZDuIS9VEMv8kfGeir_qvR5HyQVS0TccnibSZwFwI8baGeLsgRGzwFP4-24w3JyzITXGzkqbZLGyJcOKCaRcPnrU_f3cXx-cglrq7tbZbuGUGHz6It2LsrrNYw2nJMviWe06549Q-btDs2wo78f3rfw7SxgzUpthCVLqM8IwJWK4WLfg8GNRjl3ti2Zfy-VLkI36QfWVy33muTbu6rsJ4BZmI81EoaXUKhNYAdeIZjn2ciyYvWjbaSOScwsfYjHv_KAsxYp_cYVbKtx1kJLxwy7SYHbOG_24fR4A-x_t_7o9Ro9qZpcKd5jUjaBcZD_4vdYuqCNGsbNGOJ16SY5YobdsePsU16Uu28SRTEQVeFZuP3nmvWSi7gXlkFzOiFPuRioN4j9DhMoDfJnhnZjR712_e7wjhks2OkSwwGQL2MPblvJqcaUvVdvFhrabXZijWtR5zh6U6cRSyyIe8FgXRzcZxoyrr5y2UhwMORhUIKRJhfsE3A2_1xDVM0SUqBnJ-EsNL5g1_LPUjeOfUM1RpenFrFKJ_y7pjeC13-KoDb1oHnLv1GcsgslY1mbtPCLIF3wLZ-QehCmnmMzofJcIfRcULS-jj1IxpKcKchLP4_Ow0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"t26\",\n    \"duration\" : \"26\",\n    \"director\" : \"d23\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8105/api/v1/movies/44",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"44"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzNjYzE5Njk2YmVkYmZmZDkyN2RkYTI2MzJmZmM3MDQ2ZDlmNmU3OTkzMzc1MGM0YTdlMGYyNzg0NDc0M2UzM2U0MDhmZWI1YzNkOGM5M2MiLCJpYXQiOjE2Mjk3MjM1MTUuMDE4NTEwMSwibmJmIjoxNjI5NzIzNTE1LjAxODU0OSwiZXhwIjoxNjYxMjU5NTE0Ljk2MzAwOTEsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.WpFcw8Eg3qTNObS8lIXrfd0LP_dpBrVTAQxHe699tWtHmGsfMeBhHCVZV632SxqZDuIS9VEMv8kfGeir_qvR5HyQVS0TccnibSZwFwI8baGeLsgRGzwFP4-24w3JyzITXGzkqbZLGyJcOKCaRcPnrU_f3cXx-cglrq7tbZbuGUGHz6It2LsrrNYw2nJMviWe06549Q-btDs2wo78f3rfw7SxgzUpthCVLqM8IwJWK4WLfg8GNRjl3ti2Zfy-VLkI36QfWVy33muTbu6rsJ4BZmI81EoaXUKhNYAdeIZjn2ciyYvWjbaSOScwsfYjHv_KAsxYp_cYVbKtx1kJLxwy7SYHbOG_24fR4A-x_t_7o9Ro9qZpcKd5jUjaBcZD_4vdYuqCNGsbNGOJ16SY5YobdsePsU16Uu28SRTEQVeFZuP3nmvWSi7gXlkFzOiFPuRioN4j9DhMoDfJnhnZjR712_e7wjhks2OkSwwGQL2MPblvJqcaUvVdvFhrabXZijWtR5zh6U6cRSyyIe8FgXRzcZxoyrr5y2UhwMORhUIKRJhfsE3A2_1xDVM0SUqBnJ-EsNL5g1_LPUjeOfUM1RpenFrFKJ_y7pjeC13-KoDb1oHnLv1GcsgslY1mbtPCLIF3wLZ-QehCmnmMzofJcIfRcULS-jj1IxpKcKchLP4_Ow0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8105/api/v1/movies/24",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzNjYzE5Njk2YmVkYmZmZDkyN2RkYTI2MzJmZmM3MDQ2ZDlmNmU3OTkzMzc1MGM0YTdlMGYyNzg0NDc0M2UzM2U0MDhmZWI1YzNkOGM5M2MiLCJpYXQiOjE2Mjk3MjM1MTUuMDE4NTEwMSwibmJmIjoxNjI5NzIzNTE1LjAxODU0OSwiZXhwIjoxNjYxMjU5NTE0Ljk2MzAwOTEsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.WpFcw8Eg3qTNObS8lIXrfd0LP_dpBrVTAQxHe699tWtHmGsfMeBhHCVZV632SxqZDuIS9VEMv8kfGeir_qvR5HyQVS0TccnibSZwFwI8baGeLsgRGzwFP4-24w3JyzITXGzkqbZLGyJcOKCaRcPnrU_f3cXx-cglrq7tbZbuGUGHz6It2LsrrNYw2nJMviWe06549Q-btDs2wo78f3rfw7SxgzUpthCVLqM8IwJWK4WLfg8GNRjl3ti2Zfy-VLkI36QfWVy33muTbu6rsJ4BZmI81EoaXUKhNYAdeIZjn2ciyYvWjbaSOScwsfYjHv_KAsxYp_cYVbKtx1kJLxwy7SYHbOG_24fR4A-x_t_7o9Ro9qZpcKd5jUjaBcZD_4vdYuqCNGsbNGOJ16SY5YobdsePsU16Uu28SRTEQVeFZuP3nmvWSi7gXlkFzOiFPuRioN4j9DhMoDfJnhnZjR712_e7wjhks2OkSwwGQL2MPblvJqcaUvVdvFhrabXZijWtR5zh6U6cRSyyIe8FgXRzcZxoyrr5y2UhwMORhUIKRJhfsE3A2_1xDVM0SUqBnJ-EsNL5g1_LPUjeOfUM1RpenFrFKJ_y7pjeC13-KoDb1oHnLv1GcsgslY1mbtPCLIF3wLZ-QehCmnmMzofJcIfRcULS-jj1IxpKcKchLP4_Ow0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/html",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/mmarconi/Documentos/peliculas1.csv"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8105/api/v1/movies/import",
+					"host": [
+						"localhost"
+					],
+					"port": "8105",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"import"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
