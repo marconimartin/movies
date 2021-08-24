@@ -67,3 +67,14 @@ docker-compose exec **web** sh
 Para probar la API, se proporciona una colección de peticiones de postman (v2.1) para realizar pruebas.
 Se encuentran en la carpeta **data**.
 
+
+---
+## Permisos ### 
+(en caso de ser necesario)
+```
+cd ~/<your-proyects-root-dir/movies>    // (fuera de contenedores)
+sudo chown -R $USER:$USER .
+sudo chmod -R +w .
+chmod -R 777 storage
+
+```
